@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ucapan Ulang Tahun Mama</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+
+      text-align:center;
+
+      color:white;
+
+      background-image:
+      linear-gradient(rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)),
+
+      url('https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=1400');
+
+      background-size:cover;
+      background-position:center;
+
+      overflow:hidden;
+
+    }
+
+    .card{
+
+      background:rgba(255,255,255,0.1);
+
+      padding:40px;
+
+      width:90%;
+      max-width:700px;
+
+      border-radius:25px;
+
+      backdrop-filter:blur(10px);
+
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+
+      animation:muncul 1.5s ease;
+
+    }
+
+    h1{
+
+      font-size:55px;
+      margin-bottom:20px;
+      color:#ffd166;
+
+    }
+
+    p{
+
+      font-size:22px;
+      line-height:1.8;
+
+    }
+
+    button{
+
+      margin-top:30px;
+
+      padding:15px 35px;
+
+      border:none;
+
+      border-radius:12px;
+
+      background:#ff4d6d;
+
+      color:white;
+
+      font-size:18px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+
+    }
+
+    button:hover{
+
+      transform:scale(1.05);
+
+      background:#e63956;
+
+    }
+
+    .heart{
+
+      position:absolute;
+
+      color:pink;
+
+      font-size:25px;
+
+      animation:jatuh linear infinite;
+
+    }
+
+    @keyframes muncul{
+
+      from{
+
+        opacity:0;
+        transform:translateY(50px);
+
+      }
+
+      to{
+
+        opacity:1;
+        transform:translateY(0);
+
+      }
+
+    }
+
+    @keyframes jatuh{
+
+      0%{
+
+        transform:translateY(-100px);
+        opacity:1;
+
+      }
+
+      100%{
+
+        transform:translateY(100vh);
+        opacity:0;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>🎂 Happy Birthday Mama ❤️</h1>
+
+    <p id="pesan">
+
+      Mama adalah sosok terbaik dalam hidupku.
+      Terima kasih untuk semua kasih sayang,
+      doa, perhatian, dan perjuangan yang
+      selalu mama berikan setiap hari.
+
+    </p>
+
+    <button onclick="showMessage()">
+
+      Klik Ucapan
+
+    </button>
+
+  </div>
+
+  <script>
+
+    function showMessage(){
+
+      document.getElementById("pesan").innerHTML = `
+
+      Selamat ulang tahun mama tercinta ❤️ <br><br>
+
+      Semoga mama selalu sehat,
+      panjang umur,
+      bahagia,
+      dan selalu diberikan
+      rezeki serta perlindungan
+      oleh Tuhan.
+
+      Terima kasih sudah menjadi
+      mama terbaik untukku ❤️
+
+      `;
+
+      alert("Selamat Ulang Tahun Mama ❤️");
+
+    }
+
+
+    // Efek hati jatuh
+
+    function createHeart(){
+
+      let heart = document.createElement("div");
+
+      heart.classList.add("heart");
+
+      heart.innerHTML = "❤️";
+
+      heart.style.left =
+      Math.random() * 100 + "vw";
+
+      heart.style.animationDuration =
+      Math.random() * 3 + 2 + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+
+        heart.remove();
+
+      },5000);
+
+    }
+
+    setInterval(createHeart,300);
+
+  </script>
+
+</body>
+</html>
